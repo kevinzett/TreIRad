@@ -18,6 +18,7 @@
 		A9C367F9275D1EBB004EB144 /* TreIRadUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C367F8275D1EBB004EB144 /* TreIRadUITestsLaunchTests.swift */; };
 		A9C36806275D2342004EB144 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C36805275D2342004EB144 /* GameViewController.swift */; };
 		A9C3681127631636004EB144 /* EndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C3681027631636004EB144 /* EndViewController.swift */; };
+		A9C36947276B96B7004EB144 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C36946276B96B6004EB144 /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		A9C367F8275D1EBB004EB144 /* TreIRadUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreIRadUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A9C36805275D2342004EB144 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		A9C3681027631636004EB144 /* EndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndViewController.swift; sourceTree = "<group>"; };
+		A9C36946276B96B6004EB144 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				A9C367DE275D1EBA004EB144 /* Assets.xcassets */,
 				A9C367E0275D1EBA004EB144 /* LaunchScreen.storyboard */,
 				A9C367E3275D1EBA004EB144 /* Info.plist */,
+				A9C36946276B96B6004EB144 /* Player.swift */,
 			);
 			path = TreIRad;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				A9C36806275D2342004EB144 /* GameViewController.swift in Sources */,
 				A9C367DA275D1EB3004EB144 /* ViewController.swift in Sources */,
 				A9C367D6275D1EB3004EB144 /* AppDelegate.swift in Sources */,
+				A9C36947276B96B7004EB144 /* Player.swift in Sources */,
 				A9C367D8275D1EB3004EB144 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

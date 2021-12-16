@@ -10,12 +10,6 @@ import UIKit
 class GameViewController: UIViewController {
     
     let segueToScoreViewController = "segueToScoreViewController"
-    
-    var apple = "applelog"
-    var android = "androidlog"
-    var playerOne = "PlayerOne"
-    var playerTwo = "PlayerTwo"
-    
     var playerWon = "hej"
     
     
@@ -31,44 +25,41 @@ class GameViewController: UIViewController {
     @IBOutlet weak var currentPlayerLabel: UILabel!
     
     var arrayOfImages : [UIImageView] = []
-    
-    var playerOneScore : [Int] = [11]
-    var playerTwoScore : [Int] = [22]
-    
     let waysToWin : [[Int]] = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 7], [2,5,8], [3,6,9], [1,5,9], [3, 5, 7]]
     let waysToEven = [1, 1, 1, 1, 1, 1, 1, 1]
     var spotTaken : [Int] = [0, 0, 0, 0, 0, 0, 0, 0, 0]
     
+    var playerOne = Player(name: "PlayerOne", marker: "applelog", playerScore: [11])
+    var playerTwo = Player(name: "PlayerTwo", marker: "androidlog", playerScore: [22])
    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        arrayOfImages  = [UIImageView](arrayLiteral: iwOne, iwTwo, iwThree, iwFour, iwFive, iwSix, iwSeven, iwEigth, iwNine)
         
-        startingPlayer()
+        startingPlayerAndAddingImages()
     }
     
     
     
-    func startingPlayer() {
-        currentPlayerLabel.text = playerOne
+    func startingPlayerAndAddingImages() {
+        currentPlayerLabel.text = playerOne.name
+        arrayOfImages  = [UIImageView](arrayLiteral: iwOne, iwTwo, iwThree, iwFour, iwFive, iwSix, iwSeven, iwEigth, iwNine)
     }
  
     @IBAction func iwTapped(_ sender: UITapGestureRecognizer) {
         let tag = sender.view!.tag - 1
-        if currentPlayerLabel.text == playerOne && spotTaken[tag] == 0 {
-            arrayOfImages[tag].image = UIImage(named: apple)
-            currentPlayerLabel.text = playerTwo
+        if currentPlayerLabel.text == playerOne.name && spotTaken[tag] == 0 {
+            arrayOfImages[tag].image = UIImage(named: playerOne.marker)
+            currentPlayerLabel.text = playerTwo.name
             spotTaken[tag] = 1
-            playerOneScore.append(tag + 1)
-            checkWin(sender: playerOneScore)
+            playerOne.playerScore.append(tag + 1)
+            checkWin(sender: playerOne.playerScore)
             checkEven(sender: waysToEven)
-        } else if currentPlayerLabel.text == playerTwo && spotTaken[tag] == 0 {
-            arrayOfImages[tag].image = UIImage(named: android)
-            currentPlayerLabel.text = playerOne
+        } else if currentPlayerLabel.text == playerTwo.name && spotTaken[tag] == 0 {
+            arrayOfImages[tag].image = UIImage(named: playerTwo.marker)
+            currentPlayerLabel.text = playerOne.name
             spotTaken[tag] = 1
-            playerTwoScore.append(tag + 1)
-            checkWin(sender: playerTwoScore)
+            playerTwo.playerScore.append(tag + 1)
+            checkWin(sender: playerTwo.playerScore)
             checkEven(sender: waysToEven)
         }
     }
